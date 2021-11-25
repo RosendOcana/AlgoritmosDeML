@@ -1,17 +1,16 @@
-# %%
 from typing import Iterable
 import matplotlib.pyplot as plt
 import numpy as np
 from itertools import cycle,starmap
 import pandas as pd
-# %%
+#Carga de datos
 Datos_D = pd.read_csv('perme.csv')
 Registros = pd.read_csv('Registros_prueba.csv')
 
 X = Datos_D['poro'].values
 y = Datos_D['perme'].values
 y = y.reshape(-1,1)
-# %%
+#
 class Descenso:
     def __init__(self,X:np.ndarray,y:np.ndarray,iteraciones:int,lr:int) -> None:
         self.iteraciones = iteraciones
